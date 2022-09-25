@@ -7,12 +7,19 @@ class Display {
         this.valorAnterior = '';
     }
 
+    borrar() {
+        //Borrar solamente lo que está en la última posición
+        this.valorActual = this.valorActual.toString().slice(0,-1);
+
+        this.imprimirValores();
+    }
+
     agregarNumero(numero){
         //Si es el punto y ya hay un punto en el display, no hacer nada
         if(numero === '.' && this.valorActual.includes('.')) return
         //Si es el punto y no hay nada en el display, no hacer nada
         if(numero === '.' && this.valorActual === '') return
-        
+
         this.valorActual = this.valorActual.toString() + numero.toString();
         this.imprimirValores();
     }
