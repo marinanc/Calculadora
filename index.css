@@ -24,3 +24,26 @@ body {
     border-radius: 32px;
     box-shadow: 15px 10px 0px 5px #00000033;
 }
+
+button {
+    cursor: pointer;
+    margin: 5px;
+    padding: 0;
+    border-radius: 32px;
+    font-size: 1.5em;
+    border: none;
+    background-color: #00916e;
+    /*Sombra hacia la derecha:5px eje x, 5px eje y, 10px blur, -3px spread, negro con 40% opacidad
+     *Sombra hacia la izquierda: -5px eje x, -5px eje y, 15px blur, 3px spread, #00ffc1 con 1f opacidad
+    */
+    box-shadow: 5px 5px 10px -3px #00000040, -5px -5px 15px 3px #00ffc11f 
+}
+
+button:active {
+    /*Al hacer click en el botón, se oscurece*/
+    background-color: #005f54;
+}
+
+button:focus{
+    outline: none;
+}
