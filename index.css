@@ -48,6 +48,10 @@ button:focus{
     outline: none;
 }
 
+.col-2 {
+    grid-column: span 2; /*Se expanda a 2 columnas*/
+}
+
 .display {
     grid-column: 1 / -1; /*De una punta a la otra*/
     padding: 16px;
