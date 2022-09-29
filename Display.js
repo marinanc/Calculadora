@@ -3,6 +3,8 @@ class Display {
         this.displayValorAnterior = displayValorAnterior;
         this.displayValorActual = displayValorActual;
         this.calculadora = new Calculadora();
+
+        this.tipoOperacion = undefined;
         this.valorActual = '';
         this.valorAnterior = '';
     }
@@ -11,6 +13,13 @@ class Display {
         //Borrar solamente lo que está en la última posición
         this.valorActual = this.valorActual.toString().slice(0,-1);
 
+        this.imprimirValores();
+    }
+
+    borrarTodo() {
+        this.valorActual = '';
+        this.valorAnterior = '';
+        this.tipoOperacion = undefined;
         this.imprimirValores();
     }
 
