@@ -10,3 +10,7 @@ para agregar numero, enviando como parámetro lo que está en el HTML*/
 botonesNumeros.forEach(boton => {
     boton.addEventListener('click', () => display.agregarNumero(boton.innerHTML));
 });
+
+botonesOperadores.forEach(boton => {
+    boton.addEventListener('click', () => display.computar(boton.value));
+});

@@ -23,6 +23,19 @@ class Display {
         this.imprimirValores();
     }
 
+    computar(tipo) {
+        //this.tipoOperacion !== 'igual' && this.calcular(); -> si tipoOperacion es distinto a 'igual' entonces this.calcular()
+        if(this.tipoOperacion !== 'igual') this.calcular();
+
+        this.tipoOperacion = tipo;
+
+        //this.valorAnterior = this.valorActual || this.valorAnterior -> si hay un valorActual, se lo asigno a valorAnterior. Sino dejo lo que tenia valorAnterior...
+        if(this.valorActual !== '') this.valorAnterior = this.valorActual;
+
+        this.valorActual = '';
+        this.imprimirValores();
+    }
+
     agregarNumero(numero){
         //Si es el punto y ya hay un punto en el display, no hacer nada
         if(numero === '.' && this.valorActual.includes('.')) return
@@ -36,5 +49,14 @@ class Display {
     imprimirValores() {
         this.displayValorActual.textContent = this.valorActual;
         this.displayValorAnterior.textContent = this.valorAnterior;
+    }
+
+    calcular() {
+        const valorAnterior = parseFloat(this.valorAnterior);
+        const valorActual = parseFloat(this.valorActual);
+
+        if(isNaN(valorActual) || isNaN(valorAnterior)) return
+
+        this.valorActual = this.calculadora[this.tipoOperacion](valorAnterior, valorActual);
     }
 }
